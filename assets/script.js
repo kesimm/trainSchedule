@@ -63,7 +63,7 @@ trainSchedule.ref().on("child_added", function(childSnapshot, prevChildKey) {
     var tRemainder = differenceTimes % tFrequency;
     minutes = tFrequency - tRemainder;
   
-    arrival = moment().add(tMinutes, "m").format("hh:mm A");
+    arrival = moment().add(minutes, "m").format("hh:mm A");
   }
 
   $("#trainTgitable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
