@@ -28,7 +28,7 @@ $("#addButton").on("click", function() {
     frequency: frequency
   };
 
-  trainData.ref().push(addTrain);
+  data.ref().push(addTrain);
 
   alert("Your train has been added");
 
