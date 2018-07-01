@@ -4,7 +4,7 @@ var config = {
   authDomain: "trainschedule-9f1b6.firebaseapp.com",
   databaseURL: "https://trainschedule-9f1b6.firebaseio.com",
   projectId: "trainschedule-9f1b6",
-  storageBucket: "",
+  storageBucket: "trainschedule-9f1b6.appspot.com",
   messagingSenderId: "41465855579"
 };
 
@@ -66,7 +66,7 @@ data.ref().on("child_added", function(childSnapshot, prevChildKey) {
     arrival = moment().add(tMinutes, "m").format("hh:mm A");
   }
 
-  $("#train-table > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
+  $("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
           tFrequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td></tr>");
 });
 
