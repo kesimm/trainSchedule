@@ -66,7 +66,7 @@ trainSchedule.ref().on("child_added", function(childSnapshot, prevChildKey) {
     arrival = moment().add(minutes, "m").format("hh:mm A");
   }
 
-  $("#trainTgitable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
+  $("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
           tFrequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td></tr>");
 });
 
