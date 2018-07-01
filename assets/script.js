@@ -10,7 +10,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-var data = firebase.database();
+var trainSchedule = firebase.database();
 
 
 $("#addButton").on("click", function() {
@@ -28,7 +28,7 @@ $("#addButton").on("click", function() {
     frequency: frequency
   };
 
-  data.ref().push(addTrain);
+  trainSchedule.ref().push(addTrain);
 
   alert("Your train has been added");
 
@@ -41,7 +41,7 @@ $("#addButton").on("click", function() {
   return false;
 });
 
-data.ref().on("child_added", function(childSnapshot, prevChildKey) {
+trainSchedule.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   var tName = childSnapshot.val().name;
   var tDestination = childSnapshot.val().destination;
@@ -66,7 +66,7 @@ data.ref().on("child_added", function(childSnapshot, prevChildKey) {
     arrival = moment().add(tMinutes, "m").format("hh:mm A");
   }
 
-  $("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
+  $("#trainTgitable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
           tFrequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td></tr>");
 });
 
